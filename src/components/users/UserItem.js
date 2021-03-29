@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Destructuring object props
 const UserItem = ({ user: {login, avatar_url, html_url}}) => {
 
 
@@ -14,6 +15,7 @@ const UserItem = ({ user: {login, avatar_url, html_url}}) => {
       />
       <h3>{login}</h3>
       <div>
+      {/* Link as button */}
         <a href={html_url} className='btn btn-dark btn-sm my-1'>
           More
         </a>
