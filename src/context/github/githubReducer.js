@@ -1,17 +1,29 @@
 import {
   SEARCH_USERS,
   SET_LOADING,
-  CLEAR_USER,
+  CLEAR_USERS,
   GET_USER,
   GET_REPOS,
 } from '../types';
 
-export default (state, action) => {
+const fn = (state, action) => {
   switch (action.type) {
     case SEARCH_USERS:
       return {
         ...state,
         users: action.payload,
+        loading: false,
+      };
+    case GET_USER:
+      return {
+        ...state,
+        user: action.payload,
+        loading: false,
+      };
+    case CLEAR_USERS:
+      return {
+        ...state,
+        users: [],
         loading: false,
       };
     case SET_LOADING:
@@ -23,3 +35,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default fn;
